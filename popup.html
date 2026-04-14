@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>TabFlow</h1>
+      </div>
+      <div class="stats" id="stats">Loading...</div>
+    </header>
+
+    <div class="actions">
+      <button id="groupBtn" class="btn btn-primary">
+        <span class="btn-icon">📂</span> Group Tabs
+      </button>
+      <button id="aiGroupBtn" class="btn btn-ai" title="Uses AI to categorize unmatched tabs">
+        <span class="btn-icon">✨</span> AI Auto-Group
+      </button>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="rules">Rules</button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </nav>
+
+    <!-- Rules Tab -->
+    <div class="tab-content active" id="tab-rules">
+      <div class="rules-header">
+        <span class="rules-count" id="rulesCount"></span>
+        <button id="addRuleBtn" class="btn btn-small">+ Add Rule</button>
+      </div>
+
+      <div id="rulesList" class="rules-list"></div>
+
+      <div id="ruleForm" class="rule-form hidden">
+        <input type="text" id="ruleGroup" placeholder="Group name (e.g. Work)" class="input">
+        <input type="text" id="rulePatterns" placeholder="URL patterns, comma-separated" class="input">
+        <select id="ruleColor" class="input">
+          <option value="grey">Grey</option>
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
+          <option value="yellow">Yellow</option>
+          <option value="green">Green</option>
+          <option value="pink">Pink</option>
+          <option value="purple">Purple</option>
+          <option value="cyan">Cyan</option>
+          <option value="orange">Orange</option>
+        </select>
+        <div class="form-actions">
+          <button id="saveRuleBtn" class="btn btn-small btn-primary">Save</button>
+          <button id="cancelRuleBtn" class="btn btn-small">Cancel</button>
+        </div>
+      </div>
+
+      <details class="defaults-info">
+        <summary>Smart defaults (200+ domains)</summary>
+        <p>TabFlow auto-categorizes popular sites: Gmail → Email, GitHub → Dev, Figma → Design, and 200+ more. Custom rules take priority over defaults.</p>
+      </details>
+    </div>
+
+    <!-- Settings Tab -->
+    <div class="tab-content" id="tab-settings">
+      <div class="setting">
+        <label>AI Provider</label>
+        <select id="aiProvider" class="input">
+          <option value="anthropic">Anthropic (Claude)</option>
+          <option value="openai">OpenAI (GPT)</option>
+        </select>
+      </div>
+
+      <div class="setting">
+        <label>API Key</label>
+        <input type="password" id="apiKey" placeholder="sk-... or your API key" class="input">
+        <span class="hint">Stored locally. Never sent anywhere except your chosen AI provider. Only used for unmatched tabs.</span>
+      </div>
+
+      <button id="saveSettingsBtn" class="btn btn-small btn-primary">Save Settings</button>
+      <div id="settingsStatus" class="status hidden"></div>
+
+      <div class="shortcut-info">
+        <label>Keyboard Shortcut</label>
+        <kbd>Alt + G</kbd>
+        <span class="hint">Groups all tabs instantly. Customize in chrome://extensions/shortcuts</span>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://github.com/ivan-unstuck/tabflow" target="_blank">GitHub</a>
+      <span class="version">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

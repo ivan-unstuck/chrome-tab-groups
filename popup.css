@@ -1,0 +1,427 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #e0e0e0;
+  background: #1a1a2e;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-icon {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stats {
+  font-size: 11px;
+  color: #888;
+  background: #16213e;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: #0f3460;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+.btn-primary:hover {
+  background: #154785;
+}
+
+.btn-ai {
+  background: linear-gradient(135deg, #533483, #0f3460);
+  color: #e0e0e0;
+  flex: 1;
+}
+
+.btn-ai:hover {
+  background: linear-gradient(135deg, #6b44a8, #154785);
+}
+
+.btn-ai:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  background: #16213e;
+  color: #e0e0e0;
+}
+
+.btn-small:hover {
+  background: #1a2744;
+}
+
+.btn-small.btn-primary {
+  background: #0f3460;
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+/* Status */
+.status {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.status.success {
+  background: #0a3d20;
+  color: #4ade80;
+}
+
+.status.error {
+  background: #3d0a0a;
+  color: #f87171;
+}
+
+.status.loading {
+  background: #16213e;
+  color: #93c5fd;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 12px;
+  background: #16213e;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.tab {
+  flex: 1;
+  padding: 7px;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.tab.active {
+  background: #0f3460;
+  color: #e0e0e0;
+}
+
+.tab:hover:not(.active) {
+  color: #bbb;
+}
+
+/* Rules */
+.rules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rules-count {
+  font-size: 11px;
+  color: #888;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.rule-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #16213e;
+  border-radius: 6px;
+  gap: 8px;
+}
+
+.rule-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rule-name {
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rule-patterns {
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.rule-actions button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.rule-actions button:hover {
+  color: #e0e0e0;
+  background: #0f3460;
+}
+
+.rule-source {
+  font-size: 9px;
+  padding: 1px 5px;
+  background: #533483;
+  color: #c4b5fd;
+  border-radius: 4px;
+}
+
+/* Rule Form */
+.rule-form {
+  background: #16213e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #2a2a4a;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0f3460;
+}
+
+.form-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* Settings */
+.setting {
+  margin-bottom: 14px;
+}
+
+.setting label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #bbb;
+  margin-bottom: 6px;
+}
+
+.hint {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.shortcut-info {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a4a;
+}
+
+.shortcut-info label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #bbb;
+  margin-bottom: 6px;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 8px;
+  font-family: monospace;
+  font-size: 12px;
+  background: #16213e;
+  border: 1px solid #2a2a4a;
+  border-radius: 4px;
+  color: #e0e0e0;
+}
+
+/* Defaults info */
+.defaults-info {
+  font-size: 11px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.defaults-info summary {
+  cursor: pointer;
+  color: #aaa;
+}
+
+.defaults-info p {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #2a2a4a;
+}
+
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.version {
+  font-size: 11px;
+  color: #555;
+}
+
+/* Color dots */
+.color-blue { background: #3b82f6; }
+.color-red { background: #ef4444; }
+.color-yellow { background: #eab308; }
+.color-green { background: #22c55e; }
+.color-pink { background: #ec4899; }
+.color-purple { background: #a855f7; }
+.color-cyan { background: #06b6d4; }
+.color-orange { background: #f97316; }
+.color-grey { background: #6b7280; }
+
+/* Scrollbar */
+.rules-list::-webkit-scrollbar {
+  width: 4px;
+}
+.rules-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rules-list::-webkit-scrollbar-thumb {
+  background: #2a2a4a;
+  border-radius: 4px;
+}
+
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

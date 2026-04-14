@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "TabFlow",
+  "version": "1.0.0",
+  "description": "One-click tab organization with smart defaults and optional AI auto-grouping. Rules-based + 200 pre-mapped domains + Claude/OpenAI powered categorization.",
+  "permissions": ["tabs", "tabGroups", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "group-tabs": {
+      "suggested_key": {
+        "default": "Alt+G",
+        "mac": "Alt+G"
+      },
+      "description": "Group all tabs now"
+    }
+  }
+}
